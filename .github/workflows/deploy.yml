@@ -28,12 +28,15 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # Step 5: Deploy Built Files to Root of the Repo for GitHub Pages
+      # Step 5: Clean existing files in the root directory to avoid conflicts
+      - name: Clean existing files
+        run: |
+          find . -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+
+      # Step 6: Move Built Files to Root of the Repo for GitHub Pages
       - name: Deploy to GitHub Pages
         run: |
-          mkdir temp_deploy
-          mv dist/* temp_deploy/
-          mv temp_deploy/* .
+          cp -r dist/* .
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add .
