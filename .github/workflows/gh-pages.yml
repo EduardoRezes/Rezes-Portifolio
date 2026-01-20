@@ -1,33 +1,38 @@
+# This is the GitHub Actions workflow for deploying to GitHub Pages
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # ou 'master' se sua branch principal for master
+      - master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      
+      # Checkout the repository to the runner
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Set up Node.js environment
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2.1.2
         with:
-          node-version: '18'
-      
-      - name: Install dependencies
-        run: |
-          npm install
-          npm install @parcel/transformer-sass
-      
-      - name: Build
+          node-version: 16 # Altere para a versão necessária para o seu projeto
+
+      # Install project dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Build the project
+      - name: Build Project
         run: npm run build
-      
+
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          build_dir: dist # Verifique se "dist" é o caminho correto
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
