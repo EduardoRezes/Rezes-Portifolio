@@ -14,33 +14,30 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: Setup Node.js
-      - name: Setup Node.js environment
+      # Step 2: Setup Node.js environment
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 16
 
       # Step 3: Install NPM dependencies
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
 
       # Step 4: Build the project
       - name: Build project
         run: npm run build
 
-      # Step 5: Move build files to root
-      - name: Move build files to Root
-        run: |
-          cp -R dist/* .
-
-      # Step 6: Push changes to the master branch for deployment
+      # Step 5: Deploy Built Files to Root of the Repo for GitHub Pages
       - name: Deploy to GitHub Pages
         run: |
+          mkdir temp_deploy
+          mv dist/* temp_deploy/
+          mv temp_deploy/* .
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add .
           git commit -m "Deploy to GitHub Pages"
-          git push
+          git push --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
