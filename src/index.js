@@ -13,7 +13,7 @@ const TRANSLATIONS = {
 
     "about.title": "Sobre mim",
     "about.p1":
-      "Olá, meu nome é Eduardo. Tenho experiência como desenvolvedor de software, atuando em diversos projetos em ambientes corporativos e acadêmicos.",
+      "Olá, meu nome é Eduardo. Graduado em Tecnologia em Análise e Desenvolvimento de Sistemas (TADS), com atuação em diversos projetos em contextos corporativos e acadêmicos",
     "about.p2":
       "Ao longo da minha jornada, explorei várias áreas da engenharia de software e descobri minha paixão por Garantia de Qualidade (QA), que se tornou minha principal habilidade. Com o tempo, foquei na implementação de diferentes tipos de testes — automatizados, exploratórios, carga e regressão — contribuindo para o sucesso de projetos de diferentes complexidades.",
     "about.p3":
@@ -100,7 +100,7 @@ const TRANSLATIONS = {
 
     "about.title": "About me",
     "about.p1":
-      "Hi, my name is Eduardo. I have experience as a software developer, having worked on projects in both corporate and academic environments.",
+      "Hello, my name is Eduardo. I have a degree in Systems Analysis and Development Technology (TADS), and have worked on various projects in both corporate and academic settings.",
     "about.p2":
       "Throughout my journey, I explored several areas of software engineering and discovered my passion for Quality Assurance (QA), which became my main focus. Over the years, I worked with different kinds of tests—automated, exploratory, load, and regression—contributing to projects of varying complexity.",
     "about.p3":
