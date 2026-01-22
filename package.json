@@ -6,7 +6,8 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --public-url /Rezes-Portifolio/"
+    "build": "parcel build --public-url /Rezes-Portifolio/",
+    "build:local": "parcel build --public-url ./"
   },
   "repository": {
     "type": "git",
