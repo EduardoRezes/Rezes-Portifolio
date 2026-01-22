@@ -7,7 +7,6 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write
 
 jobs:
   build-and-deploy:
@@ -35,7 +34,7 @@ jobs:
 
       # Step 5: Push changes to the master branch for deployment
       - name: Deploy to GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
           name: github-pages
