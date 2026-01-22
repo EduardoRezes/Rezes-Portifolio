@@ -6,19 +6,19 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --public-url /Rezes-Portif-lio/"
+    "build": "parcel build --public-url /Rezes-Portifolio/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EduardoRezes/Rezes-Portif-lio"
+    "url": "git+https://github.com/EduardoRezes/Rezes-Portifolio"
   },
   "keywords": [],
   "author": "Jacobo Martinez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EduardoRezes/Rezes-Portif-lio/issues"
+    "url": "https://github.com/EduardoRezes/Rezes-Portifolio/issues"
   },
-  "homepage": "https://github.com/EduardoRezes/Rezes-Portif-lio#readme",
+  "homepage": "https://github.com/EduardoRezes/Rezes-Portifolio#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.3",
     "parcel": "^2.8.2",
