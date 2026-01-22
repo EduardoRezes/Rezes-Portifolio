@@ -2,9 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - master
-      - main
+    branches: [ main, master ]
 
 permissions:
   contents: read
@@ -12,7 +10,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +22,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '18'
 
       # Step 3: Install NPM dependencies
       - name: Install dependencies
@@ -39,8 +37,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          publish_dir: ./dist
-          publish_branch: gh-pages
+          path: ./dist
+          name: github-pages
 
       # Step 6: Publish to GitHub Pages
       - name: Deploy to GitHub Pages
